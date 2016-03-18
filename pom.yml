@@ -1,0 +1,17 @@
+modelVersion: 4.0.0
+groupId: toprock
+artifactId: toprock
+version: 1.0-SNAPSHOT
+packaging: jar
+properties: {project.build.sourceEncoding: UTF-8}
+dependencies:
+- {artifactId: lombok, groupId: org.projectlombok, scope: provided, version: 1.16.4}
+- {artifactId: junit, groupId: junit, scope: test, version: 4.11}
+build:
+  plugins:
+  - groupId: org.apache.maven.plugins
+    artifactId: maven-compiler-plugin
+    version: 3.5
+    configuration: {source: 1.8, target: 1.8}
+modelEncoding: UTF-8
+#pomFile: {}
