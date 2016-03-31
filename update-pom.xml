@@ -1,0 +1,3 @@
+#!/bin/sh
+mvn io.takari.polyglot:polyglot-translate-plugin:translate -Dinput=pom.yml -Doutput=pom.xml
+                     
