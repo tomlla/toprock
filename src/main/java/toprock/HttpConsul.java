@@ -1,5 +1,8 @@
 package toprock;
 
+import com.sun.org.apache.xpath.internal.operations.String;
+import org.omg.CORBA.Object;
+
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -10,23 +13,24 @@ import java.util.Map;
 import java.util.stream.Stream;
 
 public class HttpConsul {
-    public static void getRequest(String strUtl, Map<String, String> reqHeaders) {
-        URL url = trying(() -> new URL(strUtl));
-        HttpURLConnection urlConn;
-        final HttpURLConnection conn = trying(() -> (HttpURLConnection) url.openConnection());
-        trying(() -> conn.setRequestMethod("GET"));
-        final int rCode = trying(() -> conn.getResponseCode());
-        if (rCode != HttpURLConnection.HTTP_OK) {
-            throw new RuntimeException("http status code is " + rCode);
-        }
-        InputStream rStream = trying(() -> conn.getInputStream());
-        InputStreamReader isReader = new InputStreamReader(rStream, StandardCharsets.UTF_8);
-        BufferedReader bufferReader = new BufferedReader(isReader);
-        Stream<String> bodyStream = bufferReader.lines();
-        System.out.println("--<response body>--");
-        bodyStream.forEach(l -> System.out.println(l));
-        System.out.println("--</response body>--");
-    }
+
+//     public static void getRequest(String strUtl, Map<String, String> reqHeaders) {
+//         URL url = trying(() -> new URL(strUtl));
+//         HttpURLConnection urlConn;
+//         final HttpURLConnection conn = trying(() -> (HttpURLConnection) url.openConnection());
+//         trying(() -> conn.setRequestMethod("GET"));
+//         final int rCode = trying(() -> conn.getResponseCode());
+//         if (rCode != HttpURLConnection.HTTP_OK) {
+//             throw new RuntimeException("http status code is " + rCode);
+//         }
+//         InputStream rStream = trying(() -> conn.getInputStream());
+//         InputStreamReader isReader = new InputStreamReader(rStream, StandardCharsets.UTF_8);
+//         BufferedReader bufferReader = new BufferedReader(isReader);
+//         Stream<String> bodyStream = bufferReader.lines();
+//         System.out.println("--<response body>--");
+//         bodyStream.forEach(l -> System.out.println(l));
+//         System.out.println("--</response body>--");
+//     }
 
     static void puts(Object args) {
         System.out.println(args);
