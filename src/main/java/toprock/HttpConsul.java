@@ -12,6 +12,9 @@ import java.nio.charset.StandardCharsets;
 import java.util.Map;
 import java.util.stream.Stream;
 
+/**
+ * http requestをjavaSEのみでやってみる (途中)
+ */
 public class HttpConsul {
 
 //     public static void getRequest(String strUtl, Map<String, String> reqHeaders) {
