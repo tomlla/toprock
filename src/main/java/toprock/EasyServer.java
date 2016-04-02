@@ -1,10 +1,8 @@
 package toprock;
 
-import com.sun.net.httpserver.HttpContext;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
 import com.sun.net.httpserver.HttpServer;
-import com.sun.xml.internal.ws.api.message.ExceptionHasMessage;
 import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
 import lombok.val;
@@ -12,7 +10,6 @@ import lombok.val;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.net.InetSocketAddress;
-import java.util.function.Consumer;
 
 public class EasyServer {
     HttpServer server;
@@ -37,7 +34,7 @@ public class EasyServer {
         server.start();
     }
     void stop() {
-        val waitTime = 10;
+        val waitTime = 1;
         server.stop(waitTime);
     }
 

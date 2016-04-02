@@ -9,9 +9,7 @@ import java.util.List;
 
 import static toprock.tools.TopRockTools.*;
 
-/**
- * ComponentSystemとかDI的なもののをぼんやりと考えていた時のメモ
- */
+/** ComponentSystemとかDI的なもののをぼんやりと考えていた時のメモ */
 @RequiredArgsConstructor
 public class DIO {
 
